@@ -28,7 +28,7 @@ pobierania informacji ze stron zabezpieczonych hasłem.
 
 %prep
 %setup -q
-%patch0
+%patch0 -p0
 
 %build
 
