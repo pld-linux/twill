@@ -1,0 +1,14 @@
+--- setup.py.orig	2007-03-10 14:32:11.000000000 +0000
++++ setup.py	2007-03-10 14:32:23.000000000 +0000
+@@ -1,10 +1,6 @@
+ #!/usr/bin/env python
+ 
+-try:
+-    from setuptools import setup
+-except ImportError:
+-    print '(WARNING: importing distutils, not setuptools!)'
+-    from distutils.core import setup
++from distutils.core import setup
+ 
+ #### twill info.
+ 
