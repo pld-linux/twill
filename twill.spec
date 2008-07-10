@@ -1,15 +1,15 @@
-
 Summary:	twill - Web browsing system
-Summary(pl.UTF-8):twill - System przeglądania sieci WWW
+Summary(pl.UTF-8):	twill - System przeglądania sieci WWW
 Name:		twill
 Version:	0.9b1
 Release:	1
 License:	MIT
-Group:		Applications
+Group:		Applications/Networking
 Source0:	http://darcs.idyll.org/~t/projects/%{name}-%{version}.tar.gz
 # Source0-md5:	58702a05114a9927fd5ad4cd53c3b226
 Patch0:		%{name}-setup.patch
 URL:		http://twill.idyll.org/
+BuildRequires:	python >= 2.3
 BuildRequires:	rpmbuild(macros) >= 1.219
 BuildRequires:  rpm-pythonprov
 %pyrequires_eq  python-modules
@@ -30,15 +30,16 @@ pobierania informacji ze stron zabezpieczonych hasłem.
 %setup -q
 %patch0 -p0
 
-%build
-
 %install
 rm -rf $RPM_BUILD_ROOT
-python setup.py install \
+
+%{__python} setup.py install \
 	--optimize=2 \
 	--root=$RPM_BUILD_ROOT
+
 install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
-install examples/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}/
+install examples/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
+
 %py_postclean
 
 %clean
@@ -46,8 +47,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc doc/ANNOUNCE-%{version}.txt
-%doc doc/{ChangeLog,LICENSE.txt,*.html,*.css}
+%doc doc/{ANNOUNCE-%{version}.txt,ChangeLog,LICENSE.txt,*.html,*.css}
 %attr(755,root,root) %{_bindir}/*
-%{_examplesdir}/*
 %{py_sitescriptdir}/*
+%{_examplesdir}/%{name}-%{version}
