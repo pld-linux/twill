@@ -1,12 +1,13 @@
 Summary:	twill - Web browsing system
 Summary(pl.UTF-8):	twill - System przeglądania sieci WWW
 Name:		twill
-Version:	0.9b1
+Version:	0.9
 Release:	1
+Epoch:		1
 License:	MIT
 Group:		Applications/Networking
 Source0:	http://darcs.idyll.org/~t/projects/%{name}-%{version}.tar.gz
-# Source0-md5:	58702a05114a9927fd5ad4cd53c3b226
+# Source0-md5:	c362307616696f4838e9456c42b70fdc
 Patch0:		%{name}-setup.patch
 URL:		http://twill.idyll.org/
 BuildRequires:	python >= 2.3
@@ -32,12 +33,12 @@ pobierania informacji ze stron zabezpieczonych hasłem.
 
 %install
 rm -rf $RPM_BUILD_ROOT
+install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
 %{__python} setup.py install \
 	--optimize=2 \
 	--root=$RPM_BUILD_ROOT
 
-install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 install examples/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
 %py_postclean
