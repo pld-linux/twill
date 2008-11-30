@@ -10,11 +10,10 @@ Source0:	http://darcs.idyll.org/~t/projects/%{name}-%{version}.tar.gz
 # Source0-md5:	c362307616696f4838e9456c42b70fdc
 Patch0:		%{name}-setup.patch
 URL:		http://twill.idyll.org/
-BuildRequires:	python >= 2.3
+BuildRequires:	python-devel >= 2.3
 BuildRequires:	rpmbuild(macros) >= 1.219
 BuildRequires:  rpm-pythonprov
 %pyrequires_eq  python-modules
-Requires:	python >= 2.3
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
