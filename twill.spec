@@ -11,9 +11,9 @@ Source0:	http://darcs.idyll.org/~t/projects/%{name}-%{version}.tar.gz
 Patch0:		%{name}-setup.patch
 URL:		http://twill.idyll.org/
 BuildRequires:	python-devel >= 2.3
+BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.219
-BuildRequires:  rpm-pythonprov
-%pyrequires_eq  python-modules
+%pyrequires_eq	python-modules
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
