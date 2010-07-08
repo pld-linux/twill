@@ -2,7 +2,7 @@ Summary:	twill - Web browsing system
 Summary(pl.UTF-8):	twill - System przeglądania sieci WWW
 Name:		twill
 Version:	0.9
-Release:	1
+Release:	2
 Epoch:		1
 License:	MIT
 Group:		Applications/Networking
